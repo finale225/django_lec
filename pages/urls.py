@@ -21,4 +21,16 @@ from.import views
 urlpatterns = [
     path('', views.mainpage),
     path('company/', views.company),
+    path('news/', views.news),
+    path('login/', views.login),
+    path('join/', views.join),
+    path('findID/', views.findID),
+    path('findPW/', views.findPW),
+    path('product_all/', views.product_all),
+    path('product_detail/', views.product_detail),
+    path('newProduct1/', views.newProduct1),
+    path('newProduct2/', views.newProduct2),
+    path('newProduct3/', views.newProduct3),
+    path('ToS/', views.ToS),
+    path('privacy_policy/', views.privacy_policy),
 ]
