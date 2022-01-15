@@ -9,18 +9,6 @@ def company(request): # 회사소개
 def news(request): # 소식
     return render(request, 'pages/news.html')
 
-def login(request): # 로그인
-    return render(request, 'pages/login.html')
-
-def join(request): # 로그인
-    return render(request, 'pages/join.html')
-
-def findID(request): # 로그인
-    return render(request, 'pages/findID.html')
-
-def findPW(request): # 로그인
-    return render(request, 'pages/findPW.html')
-
 def product_all(request): # 전체 상품
     return render(request, 'pages/product_all.html')
 
