@@ -39,7 +39,7 @@
                             <div class="col-lg-8 text-center">
                                 <h2 class="text-white mt-0">신규상품 1</h2>
                                 <hr class="divider divider-light" />
-                                <li class="new product1"><a class="link active" href="http://localhost:8000/mysite/content_list/">신규상품명1</a></li>
+                                <li class="new product1"><a class="link active" href="/mysite/1">신규상품명1</a></li>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                             <div class="col-lg-8 text-center">
                                 <h2 class="text-white mt-0">신규상품 2</h2>
                                 <hr class="divider divider-light" />
-                                <li class="new product1"><a class="link active" href="http://localhost:8000/newProduct2/">신규상품명2</a></li>
+                                <li class="new product1"><a class="link active" href="/mysite/2">신규상품명2</a></li>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                             <div class="col-lg-8 text-center">
                                 <h2 class="text-white mt-0">신규상품 3</h2>
                                 <hr class="divider divider-light" />
-                                <li class="new product1"><a class="link active" href="http://localhost:8000/newProduct3/">신규상품명3</a></li>
+                                <li class="new product1"><a class="link active" href="/mysite/3">신규상품명3</a></li>
                             </div>
                         </div>
                     </div>
@@ -74,14 +74,18 @@
                 <h2 class="mb-4">인기상품 페이지 입니다.</h2>
                 <hr class="divider" />
                 <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-4 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-box fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">인기상품_1</h3>
-                            <p>{{ content.content | truncatewords:30 }}</p>
-                            <a class="btn btn-light btn-xl" href="http://localhost:8000/product_detail/">자세히 보기</a>
-                        </div>
-                    </div>
+                    {%if content_list%}
+                        {%for content in content_list%}
+                            <div class="col-lg-4 col-md-6 text-center">
+                                <div class="mt-5">
+                                    <div class="mb-2"><i class="bi-box fs-1 text-primary"></i></div>
+                                    <h3 class="h4 mb-2">{{ content.title }}</h3>
+                                    <p>{{ content.content | truncatewords:30 }}</p>
+                                    <a class="btn btn-light btn-xl" href="/mysite/{{ content.id }}">자세히 보기</a>
+                                </div>
+                            </div>
+                        {%endfor%}
+                    {%endif%}
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-box fs-1 text-primary"></i></div>
